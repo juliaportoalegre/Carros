@@ -7,6 +7,7 @@ var playerCount;
 var gameState;
 var car1, car2, pista;
 var car1img, car2img, pistaimg;
+var allPlayers;
 var carros = [];
 
 function preload() {

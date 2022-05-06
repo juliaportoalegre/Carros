@@ -35,8 +35,9 @@ handleMousePressed(){
     playerCount+=1
     player.name=this.input.value()
     player.index= playerCount
-    player.allPlayer()
+    player.addPlayer()
     player.updateCount(playerCount)
+    player.getDistance()
   })
 }
   display() {

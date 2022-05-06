@@ -15,7 +15,23 @@ class Player {
       playerCount:count
     })
   }
-  allPlayer(){
+    getDistance(){
+      var DistanceRef = database.ref("players/player"+ this.index)
+      DistanceRef.on('value', data =>{
+        var data = data.val()
+          this.positionX = data.positionX
+          this.positionY = data.positionY
+      })
+    }
+
+  update(){
+    var playerIndex = "players/player" + this.index;
+    database.ref(playerIndex).update({
+      positionX:this.positionX, 
+      positionY:this.positionY
+    })
+  }
+  addPlayer(){
     var playerIndex = "players/player"+this.index
     if (this.index === 1){
       this.positionX=width/2-100
@@ -28,7 +44,7 @@ class Player {
   }
   static getPlayersInfo(){
     var playerInfoRef = database.ref("players")
-    playerInfoRe.on('value', data=>{
+    playerInfoRef.on('value', data=>{
       allPlayers = data.val();
     })
   }
