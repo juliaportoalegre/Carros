@@ -2,15 +2,11 @@ class Form {
   constructor() {
     this.input = createInput("").attribute("placeholder", "Digite seu nome");
     this.playButton = createButton("Jogar");
-    this.titleImg = createImg("./assets/TITULO.png", "nome do jogo");
+    this.titleImg = createImg("./assets/TITULO.png", "gameTitle");
     this.greeting = createElement("h2");
   }
 
-  hide() {
-    this.greeting.hide();
-    this.playButton.hide();
-    this.input.hide();
-  }
+  
 
 setElementsPosition(){
   this.titleImg.position(120,160)
@@ -24,6 +20,13 @@ this.input.class("customInput")
 this.playButton.class("customButtom")
 this.greeting.class("greeting")
 }
+
+hide() {
+  this.greeting.hide();
+  this.playButton.hide();
+  this.input.hide();
+}
+
 handleMousePressed(){
   this.playButton.mousePressed(()=>{
     this.input.hide()
